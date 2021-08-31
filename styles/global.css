@@ -1,0 +1,32 @@
+@tailwind components;
+
+@layer components {
+  .social__icons {
+    @apply h-6 text-gray-600;
+  }
+
+  .button {
+    @apply px-3 py-1 bg-gray-800 text-white rounded-sm font-mono;
+  }
+  .product__container {
+    @apply px-3 py-3 md:ml-8 lg:ml-20 md:mt-14 lg:mt-20 space-y-10;
+  }
+  .product__header {
+    @apply text-2xl sm:text-7xl font-thin text-gray-900;
+  }
+  .product__info {
+    @apply text-sm font-mono text-gray-800  leading-7;
+  }
+  .custom__button {
+    @apply px-10 py-2 bg-gray-100 border border-gray-700 font-mono text-sm hover:text-white hover:bg-gray-700;
+  }
+  .collection__icon {
+    @apply h-8 hover:text-white;
+  }
+  .image__container {
+    @apply flex flex-col items-center;
+  }
+  .collection__image__container {
+    @apply bg-gray-100 py-3 px-2 rounded-md shadow-md cursor-pointer;
+  }
+}
