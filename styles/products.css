@@ -1,0 +1,19 @@
+@tailwind components;
+
+@layer components {
+  .product__Container {
+    @apply min-h-screen py-5;
+  }
+  .products__card {
+    @apply px-5 py-3 mt-4 space-y-5 md:space-y-0 md:grid md:grid-cols-3 md:gap-5 lg:grid-cols-4;
+  }
+  .product_card__container {
+    @apply flex flex-col bg-gray-50 border border-gray-100 shadow-sm hover:shadow-lg min-h-[20rem] py-5 cursor-pointer;
+  }
+  .product_card__header {
+    @apply text-center text-lg sm:text-left font-mono truncate p-3;
+  }
+  .product_card__buttons {
+    @apply w-full px-5 text-sm rounded-md py-1 bg-gray-500  text-white font-mono;
+  }
+}

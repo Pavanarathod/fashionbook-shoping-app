@@ -2,7 +2,7 @@
 
 @layer components {
   .social__icons {
-    @apply h-6 text-gray-600;
+    @apply h-5 text-gray-600;
   }
 
   .button {
@@ -15,10 +15,10 @@
     @apply text-2xl sm:text-7xl font-thin text-gray-900;
   }
   .product__info {
-    @apply text-sm font-mono text-gray-800  leading-7;
+    @apply text-lg font-thin text-gray-800  leading-9;
   }
   .custom__button {
-    @apply px-10 py-2 bg-gray-100 border border-gray-700 font-mono text-sm hover:text-white hover:bg-gray-700;
+    @apply px-10 py-2 bg-gray-50 border border-gray-700 font-mono text-sm hover:text-white hover:bg-gray-700 rounded-sm;
   }
   .collection__icon {
     @apply h-8 hover:text-white;
@@ -27,6 +27,9 @@
     @apply flex flex-col items-center;
   }
   .collection__image__container {
-    @apply bg-gray-100 py-3 px-2 rounded-md shadow-md cursor-pointer;
+    @apply bg-gray-100 py-3 px-2 rounded-md shadow-md cursor-pointer hover:shadow-lg;
+  }
+  .footer {
+    @apply min-h-screen px-5 py-5 bg-[#1B1929] md:min-h-[40vh] md:px-24 lg:px-10 lg:min-h-[70vh] lg:grid lg:grid-cols-3 lg:gap-10;
   }
 }

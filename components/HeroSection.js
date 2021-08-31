@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useScroll from "../hooks/useScroll";
-import Category from "./Category";
+
 import Content from "./Content";
 import Sidebar from "./Sidebar";
 
