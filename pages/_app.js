@@ -3,6 +3,7 @@ import "tailwindcss/tailwind.css";
 import { store } from "../app/store";
 import "../styles/global.css";
 import "../styles/products.css";
+import "../styles/checkout.css";
 import { signIn, signOut, useSession } from "next-auth/client";
 import { Provider as AuthPro } from "next-auth/client";
 import ProgressBar from "@badrap/bar-of-progress";

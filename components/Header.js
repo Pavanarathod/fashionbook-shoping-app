@@ -13,7 +13,7 @@ const Header = ({ showLogo }) => {
   const products = useSelector((state) => state.items.items);
 
   return (
-    <div className="sticky top-0 z-50 bg-white py-2">
+    <div className="sticky top-0 z-50 bg-white">
       <div className="flex items-center justify-between px-2 sm:px-10 sm:py-3">
         {showLogo && (
           <div onClick={() => router.push("/")} className="px-5 cursor-pointer">
@@ -27,7 +27,7 @@ const Header = ({ showLogo }) => {
             className="flex items-center space-x-2 relative cursor-pointer"
           >
             <p className="text-sm">Cart</p>
-            <ShoppingBagIcon className="h-5" />
+            <img src="/images/shopping-cart.png" alt="cart" className="h-9" />
             <span className="header__cart__box">{products.length}</span>
           </div>
         </div>

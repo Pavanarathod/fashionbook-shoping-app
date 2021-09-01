@@ -1,0 +1,15 @@
+@tailwind components;
+
+@layer components {
+  .checkout__container {
+    @apply max-w-7xl min-h-screen m-auto lg:flex;
+  }
+
+  .cart__header {
+    @apply text-lg sm:text-2xl text-gray-700 font-mono py-4;
+  }
+
+  .checkout__header {
+    @apply flex-[20%] p-5 bg-gray-100 ml-2 space-y-3;
+  }
+}

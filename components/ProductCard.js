@@ -14,19 +14,19 @@ const ProductCard = ({
 }) => {
   const dispatch = useDispatch();
 
-  const product = {
-    id,
-    title,
-    price,
-    description,
-    category,
-    image,
-    rating,
-  };
   const [session] = useSession();
   const products = useSelector((state) => state.items.items);
 
   const addToCart = () => {
+    const product = {
+      id,
+      title,
+      price,
+      description,
+      category,
+      image,
+      rating,
+    };
     dispatch(productActions.addToCart(product));
   };
 

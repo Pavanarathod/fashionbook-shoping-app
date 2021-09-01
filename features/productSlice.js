@@ -9,6 +9,21 @@ const productSlice = createSlice({
     addToCart(state, action) {
       state.items = [...state.items, action.payload];
     },
+
+    remooveItem(state, action) {
+      const index = state.items.findIndex(
+        (item) => item.id === action.payload.id
+      );
+
+      let newItems = [...state.items];
+
+      if (index >= 0) {
+        // items exists
+        newItems.splice(index, 1);
+      }
+
+      state.items = newItems;
+    },
   },
 });
 
