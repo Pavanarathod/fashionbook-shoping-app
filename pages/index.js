@@ -4,7 +4,6 @@ import Footer from "../components/Footer/Footer";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import Products from "../components/Products";
-import { signIn, signOut, useSession } from "next-auth/client";
 
 export default function Home({ products }) {
   return (

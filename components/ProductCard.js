@@ -2,6 +2,9 @@ import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { productActions } from "../features/productSlice";
 import { signIn, useSession } from "next-auth/client";
+import db from "../database/firebase";
+import { doc, setDoc } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 
 const ProductCard = ({
   id,
@@ -17,7 +20,7 @@ const ProductCard = ({
   const [session] = useSession();
   const products = useSelector((state) => state.items.items);
 
-  const addToCart = () => {
+  const addTofirebase = async () => {
     const product = {
       id,
       title,
@@ -27,7 +30,12 @@ const ProductCard = ({
       image,
       rating,
     };
-    dispatch(productActions.addToCart(product));
+    try {
+      await addDoc(collection(db, "products"), product);
+      dispatch(productActions.addToCart(product));
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
   };
 
   return (
@@ -48,7 +56,7 @@ const ProductCard = ({
       <div className="w-full py-1 px-3">
         <div>
           <button
-            onClick={addToCart}
+            onClick={addTofirebase}
             className="product_card__buttons group-hover:bg-gray-700"
           >
             Add To Cart
