@@ -32,4 +32,8 @@
   .footer {
     @apply min-h-screen px-5 py-5 bg-[#1B1929] md:min-h-[40vh] md:px-24 lg:px-10 lg:min-h-[70vh] lg:grid lg:grid-cols-3 lg:gap-10;
   }
+
+  .header__cart__box {
+    @apply absolute bg-red-400 px-2 text-white font-bold rounded-full bottom-3 left-10;
+  }
 }

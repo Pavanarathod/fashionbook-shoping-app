@@ -1,4 +1,7 @@
 import Image from "next/image";
+import { useDispatch, useSelector } from "react-redux";
+import { productActions } from "../features/productSlice";
+import { signIn, useSession } from "next-auth/client";
 
 const ProductCard = ({
   id,
@@ -9,6 +12,24 @@ const ProductCard = ({
   image,
   rating,
 }) => {
+  const dispatch = useDispatch();
+
+  const product = {
+    id,
+    title,
+    price,
+    description,
+    category,
+    image,
+    rating,
+  };
+  const [session] = useSession();
+  const products = useSelector((state) => state.items.items);
+
+  const addToCart = () => {
+    dispatch(productActions.addToCart(product));
+  };
+
   return (
     <div className="group product_card__container">
       <div className="text-center">
@@ -26,7 +47,10 @@ const ProductCard = ({
       </div>
       <div className="w-full py-1 px-3">
         <div>
-          <button className="product_card__buttons group-hover:bg-gray-700">
+          <button
+            onClick={addToCart}
+            className="product_card__buttons group-hover:bg-gray-700"
+          >
             Add To Cart
           </button>
         </div>

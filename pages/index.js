@@ -4,6 +4,7 @@ import Footer from "../components/Footer/Footer";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
 import Products from "../components/Products";
+import { signIn, signOut, useSession } from "next-auth/client";
 
 export default function Home({ products }) {
   return (
@@ -13,8 +14,8 @@ export default function Home({ products }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HeroSection />
-      <Header />
       <main className="max-w-[1400px] m-auto py-5">
+        <Header />
         <Products products={products} />
       </main>
       <Footer />
