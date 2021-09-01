@@ -12,4 +12,23 @@
   .checkout__header {
     @apply flex-[20%] p-5 bg-gray-100 ml-2 space-y-3;
   }
+
+  .cart__container {
+    @apply sm:grid sm:grid-cols-5 sm:items-center;
+  }
+
+  .cart__image {
+    @apply flex justify-center sm:justify-start px-5 py-5;
+  }
+
+  .cart__title {
+    @apply text-gray-800 text-lg font-mono  sm:text-left truncate;
+  }
+
+  .cart__button__one {
+    @apply px-6 py-1 bg-gray-500 hover:bg-gray-600 text-white font-mono;
+  }
+  .cart__button__two {
+    @apply px-6  py-1 bg-red-400 hover:bg-red-500 hover:font-bold text-white font-mono;
+  }
 }

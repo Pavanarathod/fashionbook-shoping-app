@@ -33,6 +33,9 @@
   }
 
   .header__cart__box {
-    @apply absolute bg-red-400 px-2 text-white font-bold rounded-full bottom-6 left-12;
+    @apply absolute bg-red-400 px-2 text-white font-bold rounded-full bottom-6 left-24;
+  }
+  .create__input__box {
+    @apply py-2 focus:outline-none bg-gray-100 rounded-md p-2;
   }
 }

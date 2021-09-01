@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { productActions } from "../features/productSlice";
 import { signIn, useSession } from "next-auth/client";
 import db from "../database/firebase";
-import { doc, setDoc } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore";
+import { useRouter } from "next/router";
 
 const ProductCard = ({
   id,
@@ -16,6 +16,7 @@ const ProductCard = ({
   rating,
 }) => {
   const dispatch = useDispatch();
+  const router = useRouter();
 
   const [session] = useSession();
   const products = useSelector((state) => state.items.items);
@@ -38,9 +39,15 @@ const ProductCard = ({
     }
   };
 
+  const productDetails = () => {
+    router.push({
+      pathname: `/details/${id}`,
+    });
+  };
+
   return (
     <div className="group product_card__container">
-      <div className="text-center">
+      <div className="text-center" onClick={productDetails}>
         <Image
           src={image}
           width={200}

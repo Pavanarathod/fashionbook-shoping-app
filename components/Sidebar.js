@@ -1,4 +1,4 @@
-import { MenuAlt2Icon } from "@heroicons/react/outline";
+import { AtSymbolIcon, MenuAlt2Icon } from "@heroicons/react/outline";
 import { useEffect, useState } from "react";
 
 const Sidebar = () => {
@@ -24,7 +24,8 @@ const Sidebar = () => {
       </div>
       <div className={`${show && "hidden"} space-y-5 pb-14`}>
         <img src="/images/instagram.png" alt="One" className="social__icons" />
-        <img src="/images/Twitter.png" alt="Two" className="social__icons" />
+        <AtSymbolIcon className="social__icons" />
+
         <img src="/images/Gmail.png" alt="Three" className="social__icons" />
         <img src="/images/GitTwo.png" alt="Four" className="social__icons" />
       </div>

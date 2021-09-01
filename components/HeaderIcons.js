@@ -1,6 +1,6 @@
 const HeaderIcons = () => {
   return (
-    <div className="hidden md:inline-flex space-x-8 cursor-pointer">
+    <div className="flex space-x-8 cursor-pointer">
       <div className="flex flex-col items-center">
         <img src="images/man.png" alt="" className="h-7" />
         <p>Men</p>

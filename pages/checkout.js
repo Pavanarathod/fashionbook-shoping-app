@@ -3,13 +3,16 @@ import Head from "next/head";
 import { useSelector } from "react-redux";
 import CartItems from "../components/checkout/CartItems";
 import { signIn, signOut, useSession } from "next-auth/client";
+import useCollection from "../hooks/useCollection";
 
 const Checkout = () => {
   const [session] = useSession();
   const products = useSelector((state) => state.items.items);
+  const [Productsdata, loading] = useCollection(products);
+  console.log(Productsdata);
 
   const getTotal = () =>
-    products.reduce((total, item) => total + item.price, 0);
+    Productsdata.reduce((total, item) => total + item.data.price, 0);
 
   return (
     <div className="p-2">
@@ -22,18 +25,22 @@ const Checkout = () => {
           <div>
             <img src="/images/Amazon.jpg" alt="" className="h-52 w-full" />
           </div>
-          {products.length ? (
+          {Productsdata.length ? (
             <h1 className="cart__header">Shopping Cart Items</h1>
           ) : (
             <h1 className="cart__header">Yoy'r shopping cart is empty</h1>
           )}
 
           <div className="px-5 py-5 space-y-5 sm:space-y-0">
-            {products?.map(
-              ({ id, title, price, description, category, image }) => (
+            {Productsdata?.map(
+              ({
+                _id,
+                data: { title, id, price, description, category, image },
+              }) => (
                 <CartItems
-                  key={id}
+                  key={_id}
                   id={id}
+                  _id={_id}
                   title={title}
                   description={description}
                   category={category}
