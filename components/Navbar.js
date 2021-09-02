@@ -13,17 +13,17 @@ const Navbar = () => {
         <img src="/images/BrandLogo.png" alt="log" className=" h-10 sm:h-14" />
       </div>
       <div className="flex space-x-3 sm:space-x-7 items-center mr-5">
-        <h1>{session && session.user.name}</h1>
+        <h1 className="font-mono">{session && session.user.name}</h1>
         <SearchIcon className="social__icons" />
         <HeartIcon className="social__icons" />
         <ShoppingBagIcon className="social__icons" />
         {session ? (
           <button className="hidden sm:block button" onClick={signOut}>
-            Logout
+            Sign out
           </button>
         ) : (
           <button className="hidden sm:block button" onClick={signIn}>
-            Login
+            Sign in
           </button>
         )}
       </div>

@@ -29,6 +29,7 @@ const Header = ({ showLogo }) => {
   return (
     <div className="sticky top-0 z-50 p-5 bg-white">
       <div className="flex items-center justify-between px-2 sm:px-10 sm:py-3">
+        {!showLogo && <span className="sm:hidden">.</span>}
         {showLogo && (
           <div onClick={() => router.push("/")} className="px-5 cursor-pointer">
             <HomeIcon className="h-8 text-gray-600 hover:animate-bounce" />

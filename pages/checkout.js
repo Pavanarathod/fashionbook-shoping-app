@@ -9,7 +9,6 @@ const Checkout = () => {
   const [session] = useSession();
   const products = useSelector((state) => state.items.items);
   const [Productsdata, loading] = useCollection(products);
-  console.log(Productsdata);
 
   const getTotal = () =>
     Productsdata.reduce((total, item) => total + item.data.price, 0);
@@ -52,7 +51,7 @@ const Checkout = () => {
           </div>
         </div>
         <div className="checkout__header">
-          {products.length > 0 && (
+          {Productsdata.length > 0 && (
             <>
               <h1 className="text-center mt-11 text-lg text-gray-800 font-mono">
                 Total Price:$ {getTotal()}
@@ -64,7 +63,7 @@ const Checkout = () => {
               ) : (
                 <button
                   onClick={signIn}
-                  className="w-full px-3 py-2 text-black border border-gray-700 font-mono"
+                  className="w-full px-3 py-2 text-black border border-gray-700 hover:bg-gray-700 hover:text-white font-mono"
                 >
                   Sign In to checkout
                 </button>

@@ -62,10 +62,7 @@ const ProductCard = ({
       </div>
       <div className="w-full py-1 px-3">
         <div>
-          <button
-            onClick={addTofirebase}
-            className="product_card__buttons group-hover:bg-gray-700"
-          >
+          <button onClick={addTofirebase} className="product_card__buttons">
             Add To Cart
           </button>
         </div>
